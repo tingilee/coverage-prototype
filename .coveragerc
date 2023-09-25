@@ -1,0 +1,38 @@
+[run]
+relative_files = True
+# omit =
+#     # omit anything in a .local directory anywhere
+#     */.local/*
+#     # omit everything in /usr
+#     /usr/*
+#     /opt/**/*.py
+
+omit=*/site-packages/*,*/tests/*,*/.eggs/*
+
+source =
+    /Users/jacqueline.lee/jkl/prototype/*
+
+
+[report]
+# number of digits after the decimal point to display for reported coverage percentages
+precision = 2
+
+exclude_lines =
+    # skip any line with a `pass` (such as may be used for @abstractmethod or @suffixed_method)
+    pass
+    # skip any line with import
+    import
+
+    # standard pragma
+    pragma: no cover
+    #\s*(pragma|PRAGMA)[:\s]?\s*(no|NO)\s*(branch|BRANCH)
+
+    # skip blocks reserved for type checking
+    if TYPE_CHECKING:
+
+
+# Any line of your source code containing a match for one of these regexes is excluded from being reported as missing.
+# You can exclude lines introducing blocks, and the entire block is excluded. If you exclude a def line or decorator line, the entire function is excluded.
+# https://coverage.readthedocs.io/en/latest/excluding.html#excluding
+
+skip_empty = True
